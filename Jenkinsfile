@@ -1,9 +1,9 @@
 pipeline {
     agent any
     environment {
-        DIRECTORY_PATH = '/path/to/your/code'
-        TESTING_ENVIRONMENT = 'testing'
-        PRODUCTION_ENVIRONMENT = 'your-name'
+        DIRECTORY_PATH = 'C:/Users/temap/Documents/my-project'
+        TESTING_ENVIRONMENT = 'Pipeline'
+        PRODUCTION_ENVIRONMENT = 'Artem Potemkin'
     }
     stages {
         stage('Build') {
@@ -30,9 +30,7 @@ pipeline {
         }
         stage('Approval') {
             steps {
-                echo "Waiting for approval"
                 sleep(time: 10, unit: 'SECONDS')
-                echo "Approval received"
             }
         }
         stage('Deploy to Production') {
